@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mohammed Aljanaahi — Industrial Engineering</title>
+  <meta name="description" content="Mohammed Aljanaahi, Engineering Systems and Management (Industrial Engineering) student at Khalifa University. Process improvement, simulation and VR safety training.">
+  <meta name="theme-color" content="#0d0e0c">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230d0e0c'/%3E%3Ctext x='16' y='22' font-family='Arial Black,Arial' font-weight='900' font-size='15' text-anchor='middle' fill='%23ffc21a'%3EMA%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+    /* Motion: a choice the visitor made on this site wins; otherwise follow the
+       system's reduce-motion setting. Decided once, before anything renders. */
+    (function () {
+      var saved = null;
+      try { saved = localStorage.getItem("motion"); } catch (e) {}
+      var system = window.matchMedia("(prefers-reduced-motion: reduce)");
+      var on = saved ? saved === "on" : !system.matches;
+      document.documentElement.setAttribute("data-motion", on ? "on" : "off");
+      window.Motion = {
+        on: on,
+        chosen: saved !== null,
+        set: function (value) {
+          try { localStorage.setItem("motion", value ? "on" : "off"); } catch (e) {}
+          location.reload();
+        }
+      };
+      // Without a saved choice, a change of the system setting reloads the page with it.
+      if (!saved) system.addEventListener("change", function () { location.reload(); });
+    })();
+  </script>
+</head>
+<body class="is-loading">
+  <a class="skip" href="#about">Skip to content</a>
+
+  <!-- Preloader: scramble resolves the name, a counter fills, then a clip-path wipe hands off to the hero -->
+  <div class="loader" aria-hidden="true">
+    <div class="loader__inner">
+      <p class="loader__kicker mono" data-scramble="MOHAMMED">MOHAMMED</p>
+      <p class="loader__name" data-scramble="ALJANAAHI">ALJANAAHI</p>
+      <div class="loader__meter"><span class="loader__bar"></span></div>
+      <p class="loader__count mono"><span class="loader__num">000</span> / 100 · calibrating</p>
+    </div>
+  </div>
+
+  <header class="nav" data-nav>
+    <a class="nav__brand" href="#top" aria-label="Mohammed Aljanaahi, back to top">
+      <span class="nav__mark">MA</span><span class="nav__brand-text">Mohammed Aljanaahi</span>
+    </a>
+    <nav aria-label="Main">
+      <ul class="nav__links">
+        <li><a href="#about" data-link="about"><span class="mono">D</span>About</a></li>
+        <li><a href="#toolkit" data-link="toolkit"><span class="mono">M</span>Toolkit</a></li>
+        <li><a href="#work" data-link="work"><span class="mono">A</span>Work</a></li>
+        <li><a href="#experience" data-link="experience"><span class="mono">I</span>Experience</a></li>
+        <li><a href="#learning" data-link="learning"><span class="mono">C</span>Learning</a></li>
+        <li><button class="nav__motion" type="button" data-motion-toggle aria-pressed="true"><span class="nav__motion-dot" aria-hidden="true"></span>Motion <span class="mono" data-motion-state>on</span></button></li>
+        <li><a href="#contact" data-link="contact" class="nav__cta">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" data-menu-toggle>
+      <span class="sr-only">Open menu</span><span class="nav__bars" aria-hidden="true"></span>
+    </button>
+    <span class="nav__progress" aria-hidden="true"></span>
+  </header>
+
+  <div class="menu" id="menu" data-menu inert>
+    <nav aria-label="Mobile">
+      <ol class="menu__links">
+        <li><a href="#about"><span class="mono">01 · D</span>About</a></li>
+        <li><a href="#toolkit"><span class="mono">02 · M</span>Toolkit</a></li>
+        <li><a href="#work"><span class="mono">03 · A</span>Work</a></li>
+        <li><a href="#experience"><span class="mono">04 · I</span>Experience</a></li>
+        <li><a href="#learning"><span class="mono">05 · C</span>Learning</a></li>
+        <li><a href="#simulate"><span class="mono">↻</span>Simulate</a></li>
+        <li><a href="#contact"><span class="mono">→</span>Contact</a></li>
+      </ol>
+    </nav>
+    <div class="menu__foot">
+      <button class="nav__motion" type="button" data-motion-toggle aria-pressed="true"><span class="nav__motion-dot" aria-hidden="true"></span>Motion <span class="mono" data-motion-state>on</span></button>
+      <p class="mono">Ajman, UAE · Open to Jan–May 2027 internships</p>
+    </div>
+  </div>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero" id="home" data-section>
+      <canvas class="hero__gl" aria-hidden="true"></canvas>
+      <!-- Marks where the assembled illustration lands; shown as-is when WebGL2 is unavailable. -->
+      <img class="hero__portrait" src="assets/hero-production-line.png" width="640" height="647" alt="Illustration of a production line: a factory, a large gear and a conveyor carrying boxes">
+      <div class="hero__grid" aria-hidden="true"></div>
+
+      <div class="hero__content">
+        <p class="eyebrow mono hero__intro">Industrial Engineering · Khalifa University</p>
+        <h1 class="hero__title">
+          <span class="mask"><span class="hero__line">Mohammed</span></span>
+          <span class="mask"><span class="hero__line hero__line--accent">Aljanaahi</span></span>
+        </h1>
+        <p class="hero__lede hero__intro">I improve processes with data. My tools are DMAIC, simulation and careful documentation, and right now I'm building VR safety training for construction sites.</p>
+        <div class="hero__actions hero__intro">
+          <a class="btn btn--solid" href="#work" data-magnetic="0.3">See the work <span aria-hidden="true">↘</span></a>
+          <a class="btn btn--ghost" href="#contact" data-magnetic="0.3">Get in touch</a>
+        </div>
+        <button class="motion-play mono" type="button" data-motion-toggle>▶ Play animations <span>· paused by your system's reduce-motion setting</span></button>
+      </div>
+
+      <dl class="hero__meta hero__intro">
+        <div><dt class="mono">Based in</dt><dd>Ajman, UAE</dd></div>
+        <div><dt class="mono">Studying</dt><dd>B.Sc. Engineering Systems &amp; Management · graduating Spring 2027</dd></div>
+        <div><dt class="mono">Open to</dt><dd>Jan–May 2027 internships · operations, data, systems</dd></div>
+      </dl>
+      <p class="hero__hint mono hero__intro" aria-hidden="true">Built from process-chart symbols · hover to inspect · scroll to ship</p>
+    </section>
+
+    <!-- 01 DEFINE: ABOUT -->
+    <section class="section about" id="about" data-section>
+      <div class="stage" data-reveal="left"><span class="stage__no mono">01</span><span class="stage__name mono">Define</span><span class="stage__rule"></span></div>
+      <div class="about__grid">
+        <div class="about__title">
+          <h2 class="display" data-reveal-lines>
+            <span class="mask"><span class="line">The</span></span>
+            <span class="mask"><span class="line">problem</span></span>
+            <span class="mask"><span class="line display--outline">first.</span></span>
+          </h2>
+        </div>
+        <p class="about__text" data-scrub-words>
+          I'm an <strong>industrial engineering</strong> student at <strong>Khalifa University</strong>, and I like to understand a process before I try to change it. I use <strong>DMAIC</strong> and <strong>Lean Six Sigma</strong> to find root causes, and I test ideas with statistics and simulation in <strong>FlexSim</strong>, <strong>LINGO</strong> and <strong>Minitab</strong> before anyone spends money on them. Before university I spent sixteen months in UAE National Service. I organized schedules, documented procedures with senior officials, and kept patients moving at a hospital front desk. Today I'm part of a five-person team building a <strong>VR safety-training module</strong> for construction sites.
+        </p>
+      </div>
+
+      <ul class="stats" data-reveal-group="0.1">
+        <li><span class="stats__num" data-count="3.50" data-decimals="2">3.50</span><span class="stats__label mono">CGPA out of 4.00</span></li>
+        <li><span class="stats__num stats__num--text">Fall '24</span><span class="stats__label mono">President's List</span></li>
+        <li><span class="stats__num" data-count="7">7</span><span class="stats__label mono">First-year students mentored</span></li>
+        <li><span class="stats__num" data-count="5">5</span><span class="stats__label mono">National Service roles</span></li>
+        <li><span class="stats__num" data-count="97.73" data-decimals="2" data-suffix="%">97.73%</span><span class="stats__label mono">High school final score</span></li>
+      </ul>
+    </section>
+
+    <!-- 02 MEASURE: TOOLKIT -->
+    <section class="section toolkit" id="toolkit" data-section>
+      <div class="stage" data-reveal="left"><span class="stage__no mono">02</span><span class="stage__name mono">Measure</span><span class="stage__rule"></span></div>
+      <div class="toolkit__head">
+        <h2 class="display" data-reveal-lines>
+          <span class="mask"><span class="line">The</span></span>
+          <span class="mask"><span class="line">toolkit.</span></span>
+        </h2>
+        <p class="toolkit__note" data-reveal>The software, methods and coursework I use. Hover over a row to pause it.</p>
+      </div>
+      <div class="marquees" data-marquees>
+        <div class="marquee" data-label="Software" data-items="Excel|Minitab|FlexSim|LINGO|SimLab Composer|Python|MATLAB|Microsoft Project|ChatGPT|Claude" data-duration="46"></div>
+        <div class="marquee" data-label="Methods" data-items="DMAIC|Lean Six Sigma|SIPOC mapping|IPO modeling|Gantt planning|Decision matrices|Quality control|Process optimization|Supply chain management|Systems modeling|Data analysis" data-duration="54" data-reverse></div>
+        <div class="marquee" data-label="Coursework" data-items="Operational Excellence · OPEX 411|Engineering Systems Design · ESMA 462|Statistics &amp; Quantitative Methods|Business &amp; Sustainability · BUSS 361|Data &amp; Information Engineering" data-duration="50"></div>
+      </div>
+      <p class="toolkit__langs mono" data-reveal>Languages: Arabic (native) · English (professional)</p>
+    </section>
+
+    <!-- 03 ANALYZE: WORK (pinned horizontal) -->
+    <section class="work" id="work" data-section>
+      <div class="work__pin">
+        <div class="work__head">
+          <div class="stage" data-reveal="left"><span class="stage__no mono">03</span><span class="stage__name mono">Analyze</span><span class="stage__rule"></span></div>
+          <div class="work__title-row">
+            <h2 class="display" data-reveal-lines>
+              <span class="mask"><span class="line">Selected <em>work</em></span></span>
+            </h2>
+            <div class="work__controls">
+              <span class="work__counter mono"><span data-work-index>01</span> / <span data-work-total>04</span></span>
+              <div class="work__bar"><span data-work-progress></span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="work__track" data-work-track tabindex="0" role="group" aria-roledescription="carousel" aria-label="Selected projects">
+
+          <article class="card card--feature" data-card>
+            <div class="card__top">
+              <span class="card__tag mono">Senior Design Project · 2026–now</span>
+              <span class="card__tag mono">Team of five</span>
+            </div>
+            <h3 class="card__title">VR safety training for construction sites</h3>
+            <p class="card__sub">"Development of a VR Training Module to Reduce Mobile-Equipment Accident via Traffic Management Plans"</p>
+            <svg class="card__diagram" viewBox="0 0 320 120" aria-hidden="true">
+              <g class="draw">
+                <rect x="4" y="38" width="80" height="44" rx="6"/><rect x="120" y="38" width="80" height="44" rx="6"/><rect x="236" y="38" width="80" height="44" rx="6"/>
+                <path d="M84 60h36M200 60h36"/><path d="M114 55l6 5-6 5M230 55l6 5-6 5"/>
+              </g>
+              <g class="labels mono"><text x="44" y="64">UNSAFE</text><text x="160" y="64">EXPLAIN</text><text x="276" y="64">SAFE</text></g>
+            </svg>
+            <ul class="chips">
+              <li>Mobile equipment</li><li>Floor openings</li><li>Falling objects</li><li>Moving machinery</li><li>Rotating equipment</li>
+            </ul>
+            <p class="card__body">Five high-risk scenarios. Each one shows the unsafe condition, explains the hazard, then shows the safe way to work. It runs on head-mounted VR or a VR igloo, for one learner or a group. My part was the input-process-output (IPO) flow, the assumptions and the Gantt chart. I also wrote IEEE-format decision matrices to justify design choices, and kept the logbook and report sections.</p>
+            <p class="card__tools mono">SimLab Composer · IPO · Gantt · Decision matrices</p>
+          </article>
+
+          <article class="card" data-card>
+            <div class="card__top">
+              <span class="card__tag mono">OPEX 411 · DMAIC · 2026</span>
+              <span class="card__tag mono">Group project</span>
+            </div>
+            <h3 class="card__title">Campus parking access improvement</h3>
+            <svg class="card__diagram card__diagram--sipoc" viewBox="0 0 320 120" aria-hidden="true">
+              <g class="draw">
+                <rect x="4" y="22" width="56" height="76" rx="5"/><rect x="69" y="22" width="56" height="76" rx="5"/><rect x="134" y="22" width="56" height="76" rx="5"/><rect x="199" y="22" width="56" height="76" rx="5"/><rect x="264" y="22" width="52" height="76" rx="5"/>
+              </g>
+              <g class="labels labels--big"><text x="32" y="68">S</text><text x="97" y="68">I</text><text x="162" y="68">P</text><text x="227" y="68">O</text><text x="290" y="68">C</text></g>
+            </svg>
+            <p class="card__body">I wrote the Introduction and the <strong>Define</strong> phase of the DMAIC report. That meant mapping the whole parking-access process with a <strong>SIPOC</strong> diagram (suppliers, inputs, process, outputs, customers) so the team agreed on scope before anyone measured anything.</p>
+            <p class="card__tools mono">DMAIC · SIPOC · Process mapping</p>
+          </article>
+
+          <article class="card" data-card>
+            <div class="card__top">
+              <span class="card__tag mono">Manufacturing · 2026</span>
+              <span class="card__tag mono">Group engineering report</span>
+            </div>
+            <h3 class="card__title">Automotive PP bumper manufacturing</h3>
+            <svg class="card__diagram" viewBox="0 0 320 120" aria-hidden="true">
+              <g class="draw">
+                <circle cx="40" cy="60" r="26"/><circle cx="160" cy="60" r="26"/><circle cx="280" cy="60" r="26"/>
+                <path d="M66 60h68M186 60h68"/><path d="M128 55l6 5-6 5M248 55l6 5-6 5"/>
+              </g>
+              <g class="labels mono"><text x="40" y="64">PLAN</text><text x="160" y="64">ASSEMBLE</text><text x="280" y="64">PRESENT</text></g>
+            </svg>
+            <p class="card__body">I developed the <strong>process-planning</strong> and <strong>assembly</strong> sections for producing polypropylene (PP) car bumpers, then turned them into slides and presented them to the class.</p>
+            <p class="card__tools mono">Process planning · Assembly · Technical presentation</p>
+          </article>
+
+          <article class="card card--cta" data-card>
+            <span class="card__tag mono">Next</span>
+            <h3 class="card__title">Your process could be next.</h3>
+            <p class="card__body">I'm looking for an internship from January to May 2027 in operations, data or systems. If your team is trying to fix a bottleneck, I'd like to help.</p>
+            <a class="btn btn--solid" href="#contact" data-magnetic="0.3">Start a conversation</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 IMPROVE: EXPERIENCE -->
+    <section class="section experience" id="experience" data-section>
+      <div class="stage" data-reveal="left"><span class="stage__no mono">04</span><span class="stage__name mono">Improve</span><span class="stage__rule"></span></div>
+      <h2 class="display display--right" data-reveal-lines>
+        <span class="mask"><span class="line">Where I've</span></span>
+        <span class="mask"><span class="line display--outline">worked.</span></span>
+      </h2>
+
+      <ol class="rows" data-rows>
+        <li class="row" data-row>
+          <button class="row__head" aria-expanded="false">
+            <span class="row__no mono">01</span>
+            <span class="row__title">Peer Mentor</span>
+            <span class="row__org">KU Peer Mentoring Program · Khalifa University</span>
+            <span class="row__date mono">Sep–Dec 2023</span>
+            <span class="row__icon" aria-hidden="true"></span>
+          </button>
+          <div class="row__body"><div>
+            <ul>
+              <li>Mentored 7 new students in one-on-one and group sessions, with academic guidance fitted to each of them.</li>
+              <li>Taught the fundamentals of Calculus I and pointed students to university resources to build their confidence.</li>
+              <li>Ran weekly discussions about common first-year challenges.</li>
+            </ul>
+          </div></div>
+        </li>
+        <li class="row" data-row>
+          <button class="row__head" aria-expanded="false">
+            <span class="row__no mono">02</span>
+            <span class="row__title">National Service Member</span>
+            <span class="row__org">UAE Military · rotated through 5 roles</span>
+            <span class="row__date mono">Sep 2021 – Jan 2023</span>
+            <span class="row__icon" aria-hidden="true"></span>
+          </button>
+          <div class="row__body"><div>
+            <ul>
+              <li><strong>Administrative Support, National Service Office (7 months).</strong> Organized schedules and daily office tasks, documented procedures with senior officials, and co-wrote an official publication.</li>
+              <li><strong>Receptionist, Hospital (3 months).</strong> Scheduled and confirmed patient appointments to improve patient flow, working with doctors and nurses.</li>
+            </ul>
+          </div></div>
+        </li>
+        <li class="row" data-row>
+          <button class="row__head" aria-expanded="false">
+            <span class="row__no mono">03</span>
+            <span class="row__title">B.Sc. Engineering Systems &amp; Management</span>
+            <span class="row__org">Industrial Engineering · Khalifa University, Abu Dhabi</span>
+            <span class="row__date mono">2023 – 2027</span>
+            <span class="row__icon" aria-hidden="true"></span>
+          </button>
+          <div class="row__body"><div>
+            <ul>
+              <li>Expected graduation: Spring 2027. CGPA 3.50 / 4.00. President's List, Fall 2024.</li>
+              <li>Relevant coursework: Operational Excellence (OPEX 411), Engineering Systems Design (ESMA 462), Statistics and Quantitative Methods, Business and Sustainability (BUSS 361).</li>
+            </ul>
+          </div></div>
+        </li>
+        <li class="row" data-row>
+          <button class="row__head" aria-expanded="false">
+            <span class="row__no mono">04</span>
+            <span class="row__title">High School Diploma</span>
+            <span class="row__org">Sheikh Rashid bin Saeed Islamic Institute, Dubai</span>
+            <span class="row__date mono">June 2021</span>
+            <span class="row__icon" aria-hidden="true"></span>
+          </button>
+          <div class="row__body"><div>
+            <ul><li>Final score: 97.73%.</li></ul>
+          </div></div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- 05 CONTROL: LEARNING -->
+    <section class="section learning" id="learning" data-section>
+      <div class="stage" data-reveal="left"><span class="stage__no mono">05</span><span class="stage__name mono">Control</span><span class="stage__rule"></span></div>
+      <div class="learning__grid">
+        <div class="learning__title">
+          <h2 class="display" data-reveal-lines>
+            <span class="mask"><span class="line">Always</span></span>
+            <span class="mask"><span class="line">learning.</span></span>
+          </h2>
+          <div class="honor" data-reveal="scale" data-parallax="30">
+            <span class="honor__kicker mono">Recognition</span>
+            <span class="honor__title">President's List</span>
+            <span class="honor__meta mono">Khalifa University · Fall 2024</span>
+          </div>
+        </div>
+        <ul class="certs" data-reveal-group="0.07">
+          <li><span class="certs__name">Certificate of Completion: Intelligence Science Course</span><span class="certs__by mono">Khalifa University · Oct 2026</span></li>
+          <li><span class="certs__name">Data Quality: Measure, Improve, and Enforce Reliable Systems</span><span class="certs__by mono">LinkedIn Learning · 2026</span></li>
+          <li><span class="certs__name">Database Design Fundamentals</span><span class="certs__by mono">LinkedIn Learning · 2026</span></li>
+          <li><span class="certs__name">Generative AI for Business Analysts</span><span class="certs__by mono">LinkedIn Learning · 2026</span></li>
+          <li><span class="certs__name">Fundamentals of Business Process Mapping</span><span class="certs__by mono">LinkedIn Learning · 2026</span></li>
+          <li><span class="certs__name">An Introduction to AI and Sustainability</span><span class="certs__by mono">LinkedIn Learning · 2026</span></li>
+          <li><span class="certs__name">Bloomberg Market Concepts</span><span class="certs__by mono">Bloomberg · Mar 2024</span></li>
+          <li><span class="certs__name">Learning Microsoft Project 2020</span><span class="certs__by mono">LinkedIn Learning · 2024</span></li>
+          <li><span class="certs__name">Learning Excel Desktop (Microsoft 365)</span><span class="certs__by mono">LinkedIn Learning · 2024</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SIMULATE: queue toy -->
+    <section class="section sim" id="simulate" data-section>
+      <div class="stage" data-reveal="left"><span class="stage__no mono">↻</span><span class="stage__name mono">Simulate</span><span class="stage__rule"></span></div>
+      <div class="sim__head">
+        <h2 class="display" data-reveal-lines>
+          <span class="mask"><span class="line">Try the</span></span>
+          <span class="mask"><span class="line display--outline">bottleneck.</span></span>
+        </h2>
+        <p class="sim__note" data-reveal>A small queueing model of a car-park entrance, in the spirit of the parking DMAIC project. Change the arrival rate and the number of open gates, and watch the waiting time react. These numbers are illustrative, not project data.</p>
+      </div>
+      <div class="sim__panel" data-reveal="up">
+        <canvas class="sim__canvas" data-sim aria-label="Animated queue simulation of cars waiting at parking gates" role="img"></canvas>
+        <div class="sim__ui">
+          <label class="sim__ctl"><span class="mono">Arrivals / min <output data-out="rate">12</output></span><input type="range" min="2" max="30" step="1" value="12" data-in="rate"></label>
+          <label class="sim__ctl"><span class="mono">Open gates <output data-out="gates">2</output></span><input type="range" min="1" max="4" step="1" value="2" data-in="gates"></label>
+          <label class="sim__ctl"><span class="mono">Avg. service time <output data-out="service">8</output> s</span><input type="range" min="3" max="15" step="1" value="8" data-in="service"></label>
+          <div class="sim__stats">
+            <div><span class="mono">Avg. wait</span><strong data-stat="wait">0.0 s</strong></div>
+            <div><span class="mono">In queue</span><strong data-stat="queue">0</strong></div>
+            <div><span class="mono">Gate utilization</span><strong data-stat="util">0%</strong></div>
+            <div><span class="mono">Served</span><strong data-stat="served">0</strong></div>
+          </div>
+          <button class="btn btn--ghost btn--small" type="button" data-sim-reset>Reset run</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUTPUT: CONTACT (fixed backdrop clipped to section) -->
+    <section class="contact" id="contact" data-section>
+      <div class="contact__backdrop" aria-hidden="true">
+        <svg class="contact__gear" viewBox="-110 -110 220 220"><path class="gear-path"/><circle r="34" fill="none" stroke="currentColor" stroke-width="1"/></svg>
+      </div>
+      <div class="contact__panel" data-contact-panel>
+        <div class="stage stage--light"><span class="stage__no mono">→</span><span class="stage__name mono">Output</span><span class="stage__rule"></span></div>
+        <h2 class="contact__title">
+          <span class="mask"><span class="contact__line">Let's improve</span></span>
+          <span class="mask"><span class="contact__line">something <em>together.</em></span></span>
+        </h2>
+        <p class="contact__lede contact__row">Open to internships from January to May 2027 in operations, data and systems roles. Email gets the fastest reply.</p>
+        <div class="contact__actions contact__row">
+          <a class="btn btn--solid btn--big" href="mailto:Mohammed.aljanaahi1@gmail.com" data-magnetic="0.28">Send an email <span aria-hidden="true">↗</span></a>
+          <a class="btn btn--ghost btn--big" href="https://www.linkedin.com/in/mohammed-aljanaahi" target="_blank" rel="noopener noreferrer" data-magnetic="0.28">LinkedIn <span aria-hidden="true">↗</span></a>
+        </div>
+        <dl class="contact__facts contact__row">
+          <div><dt class="mono">Email</dt><dd><a href="mailto:Mohammed.aljanaahi1@gmail.com">Mohammed.aljanaahi1@gmail.com</a></dd></div>
+          <div><dt class="mono">LinkedIn</dt><dd><a href="https://www.linkedin.com/in/mohammed-aljanaahi" target="_blank" rel="noopener noreferrer">/in/mohammed-aljanaahi</a></dd></div>
+          <div><dt class="mono">Location</dt><dd>Ajman, UAE</dd></div>
+        </dl>
+      </div>
+      <footer class="footer">
+        <span class="mono">© 2026 Mohammed Aljanaahi</span>
+        <a class="mono" href="#top">Back to top ↑</a>
+      </footer>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/gear-field.js"></script>
+  <script src="js/portrait-field.js"></script>
+  <script src="js/hero-image-data.js"></script>
+  <script src="js/queue-sim.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
